@@ -47,14 +47,6 @@ class Row extends React.Component<
 			<>
 				{/* the grid for the row */}
 				<div className="grid">
-					{this.state.active ? (
-						// an invisible button of the same size so that the two sides are evened out
-						<button className="submit invisible" style={{ cursor: "default" }}>
-							Submit
-						</button>
-					) : (
-						""
-					)}
 					{/* the grid for guess entry */}
 					<div className="grid">
 						{this.state.colours.map((_, v) => {
@@ -70,19 +62,7 @@ class Row extends React.Component<
 						})}
 					</div>
 					{/* the grid for guess validation */}
-					<div className="grid">
-						{this.state.colours.map((_, v) => {
-							return (
-								<Circle
-									type="guess"
-									active={this.state.active}
-									id={v}
-									// Passing through the function to check the colour to the Circle class (for the guess confirmation.)
-									checkColour={this.checkColour}
-								/>
-							);
-						})}
-					</div>
+
 					{this.state.active ? (
 						// The actual button the submit your guesses
 						<button
@@ -90,14 +70,25 @@ class Row extends React.Component<
 							onClick={this.state.rowIsFinished ? this.submitRow : () => null}
 							style={{
 								cursor: this.state.rowIsFinished ? "pointer" : "no-drop",
-								color: this.state.rowIsFinished ? "white" : "#fff7",
-								border: "3px solid" + this.state.rowIsFinished ? "white" : "#ff7"
+								color: this.state.rowIsFinished ? "white" : "#fff7"
 							}}
 						>
 							Submit
 						</button>
 					) : (
-						""
+						<div className="grid">
+							{this.state.colours.map((_, v) => {
+								return (
+									<Circle
+										type="guess"
+										active={this.state.active}
+										id={v}
+										// Passing through the function to check the colour to the Circle class (for the guess confirmation.)
+										checkColour={this.checkColour}
+									/>
+								);
+							})}
+						</div>
 					)}
 				</div>{" "}
 			</>

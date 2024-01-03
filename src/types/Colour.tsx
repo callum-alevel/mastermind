@@ -5,7 +5,7 @@ const Colours: Colour[] = [
 	["green", "#2ECC71"],
 	["aqua", "#00FFFF"],
 	["orange", "#F59A16"],
-	["yellow", "#DFFF00"],
+	["yellow", "#EFF43F"],
 	["purple", "#9622F1"],
 	["pink", "#F516E7"]
 ];
