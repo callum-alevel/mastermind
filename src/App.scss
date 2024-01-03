@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
+
+body {
+	background-color: #353535;
+}
+
+.App {
+	text-align: center;
+	min-height: 96vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+	font-family: "Kanit";
+	//rules
+	button.rules,
+	a {
+		background-color: inherit;
+		border: none;
+		padding-top: 0px;
+		border-radius: 10px;
+		color: #0af;
+		text-decoration: none;
+	}
+	h1.title {
+		margin-bottom: 0;
+	}
+
+	// Submit button on the side of the game
+	button.submit {
+		background-color: inherit;
+		border: 3px solid white;
+		color: white;
+		width: fit-content;
+		height: fit-content;
+		margin-top: 10px;
+		font-size: 17.5px;
+	}
+	button.submit.invisible {
+		padding: 3px;
+		margin: 0;
+	}
+	// The grid to store the circles in
+	.grid {
+		display: grid;
+		color: white;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		width: min-content;
+		margin-bottom: 2px;
+	}
+	// The grid for choosing a colour
+	.grid.dropdown {
+		grid-template-columns: 1fr 1fr;
+		width: 40px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	/// Circle styles
+	// The base for each circle type
+	.circle {
+		border-radius: 50%;
+		margin-left: 5px;
+	}
+	// The colour circles (for making guesses)
+	.circle.colour {
+		border: 5px solid #fff8;
+		height: 40px;
+		width: 40px;
+		margin-top: 5px;
+	}
+	// The circles which show if your guess was correct or not
+	.circle.guess {
+		border: 3px solid #fff7;
+		height: 20px;
+		width: 20px;
+		margin-top: 15px;
+		margin-bottom: 10px;
+	}
+	// The circles used to select a colour
+	.circle.guess.picker {
+		margin-top: 2px;
+		margin-bottom: 0;
+		height: 15px;
+		width: 15px;
+	}
+	// Optimisations for mobile devices
+	@media screen and (max-width: 1000px) {
+		width: min-content;
+		margin-top: 25px;
+		margin-left: 10px;
+		text-align: left;
+		align-items: flex-start;
+		h1 {
+			font-size: xx-large;
+			margin-left: 5px;
+		}
+		button.submit.invisible {
+			display: none;
+		}
+		button.rules {
+			margin-left: 5px;
+			padding-left: 0;
+		}
+	}
+}
+
+//Styling for the rules box
+.modal-styles {
+	font-family: "Kanit";
+	background: #353535;
+	color: white;
+	border: 1px solid #fff3;
+}

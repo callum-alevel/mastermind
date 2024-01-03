@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# [Mastermind Online](https://mastermind.cxllm.uk) <!-- omit in toc -->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project, completed as part of my A-Level Computer Science course, is an online version of the Mastermind board game written using TypeScript and the React web framework.
 
-## Available Scripts
+Table of Contents
 
-In the project directory, you can run:
+- [The Game](#the-game)
+- [Playing the Game](#playing-the-game)
+  - [Colour Definitions](#colour-definitions)
+  - [Winning and Losing](#winning-and-losing)
 
-### `yarn start`
+## The Game
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The way it works is similar to the way the game [Wordle (_New York Times_)](https://www.nytimes.com/games/wordle/index.html) works. The player has to guess a randomly-generated 4-colour sequence across 6 guesses. There are 8 colours that can be included in the sequence and colours can be repeated in a sequence.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Playing the Game
 
-### `yarn test`
+**Guess the 4 colour sequence in 6 tries**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Each guess much contain 4 colours of the 8 available
+- To begin, select your chosen colours on the first row and press submit, and repeat this until you guess correctly, or have guessed 6 times.
+- The colours of the circles next to your guess will change to show how close you were to the correct sequence
 
-### `yarn build`
+### Colour Definitions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- A white circle means that your guess is in the sequence and in the position selected
+- A red circle means that your guess is in the sequence, but in a different position
+- A hollow circle means that your guess is not in the sequence
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Winning and Losing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+To win, you must guess the sequence correctly in 6 guesses or less, and you lose if you fail to do so.
