@@ -52,6 +52,6 @@ Desktop Version:
 
 ### Difficulty Selection
 
-Users have the option to choose whether or not their sequence made up of 6 or 8 colours, making it easier/harder to guess respectively
+Users have the option to choose whether or not their sequence made up of 6, 8 or 10 colours, allowing users to change the game based on their skill level
 
-<img src="https://i.imgur.com/aUgx4ZO.png" width="400px" />
+<img src="https://i.imgur.com/ccfFQug.png" width="400px" />
