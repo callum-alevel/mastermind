@@ -40,8 +40,8 @@ class Rules extends React.Component<
 						{!this.state.selected ? (
 							<>
 								<br />- At the bottom of this page, you have the option to select
-								whether you'd like to have 6 or 8 colours to choose from per guess (6 is
-								easier, 8 is harder)
+								whether you'd like to have 6, 8 or 10 colours to choose from per guess
+								(6 is easier, 8 is medium, 10 is harder)
 							</>
 						) : (
 							""
@@ -169,7 +169,14 @@ class Rules extends React.Component<
 									this.selectColour(8);
 								}}
 							>
-								Hard (8 colours)
+								Medium (8 colours)
+							</Button>
+							<Button
+								onClick={() => {
+									this.selectColour(10);
+								}}
+							>
+								Hard (10 colours)
 							</Button>
 						</>
 					) : (
@@ -187,7 +194,7 @@ class Rules extends React.Component<
 			<></>
 		);
 	}
-	selectColour = (numberOfColours: 6 | 8) => {
+	selectColour = (numberOfColours: 6 | 8 | 10) => {
 		this.props.setColours(numberOfColours);
 		this.setState({ selected: true, show: false });
 	};

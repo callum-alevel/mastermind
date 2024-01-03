@@ -7,12 +7,25 @@ const Colours: Colour[] = [
 	["orange", "#F4863F"],
 	["yellow", "#EFF43F"],
 	["purple", "#982CF7"],
-	["pink", "#F516E7"]
+	["pink", "#F516E7"],
+	["grey", "#777"],
+	["white", "#eee"]
 ];
 
 // The set colour names.
 export type Colour = [
-	"blue" | "red" | "green" | "orange" | "yellow" | "purple" | "pink" | "aqua",
+	(
+		| "blue"
+		| "red"
+		| "green"
+		| "orange"
+		| "yellow"
+		| "purple"
+		| "pink"
+		| "aqua"
+		| "grey"
+		| "white"
+	),
 	string
 ];
 
