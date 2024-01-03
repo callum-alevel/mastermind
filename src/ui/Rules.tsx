@@ -137,7 +137,7 @@ class Rules extends React.Component<{ show: boolean }, { show: boolean }> {
 					This would mean that:
 					<br /> - Blue is in the sequence, and in the right place
 					<br /> - Red is in the sequence, but in the wrong place
-					<br /> - Green and Cyan are not in the sequence at all
+					<br /> - Green and Aqua are not in the sequence at all
 				</Modal.Body>
 				<Modal.Footer className="modal-styles">
 					<Button
