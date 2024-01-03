@@ -1,7 +1,6 @@
 //The class for the individual circles in each row of mastermind
 
 import React from "react";
-import Colours from "../types/Colour";
 
 class Circle extends React.Component<
 	//typings
@@ -11,6 +10,7 @@ class Circle extends React.Component<
 		id: number;
 		setColour?: Function;
 		checkColour?: Function;
+		getColours?: Function;
 	},
 	{ showMenu: boolean; colour?: string; active: boolean }
 > {
@@ -81,8 +81,9 @@ class Circle extends React.Component<
 				{this.state.showMenu ? (
 					<div className="grid dropdown">
 						{
-							// Creates the dropdown menu of the options for colours
-							Colours.map(([colour, hex]) => {
+							// Creates the dropdown menu of the options for colours, using the colours that are selected based on the difficulty chosen
+							//@ts-ignore
+							this.props.getColours().map(([colour, hex]) => {
 								return this.state.active ? (
 									<div
 										className="circle guess picker"

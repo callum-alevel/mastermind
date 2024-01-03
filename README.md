@@ -8,6 +8,9 @@ Table of Contents
 - [Playing the Game](#playing-the-game)
   - [Colour Definitions](#colour-definitions)
   - [Winning and Losing](#winning-and-losing)
+- [Features](#features)
+  - [Mobile Support (Responsive Design)](#mobile-support-responsive-design)
+  - [Difficulty Selection](#difficulty-selection)
 
 ## The Game
 
@@ -30,3 +33,13 @@ The way it works is similar to the way the game [Wordle (_New York Times_)](http
 ### Winning and Losing
 
 To win, you must guess the sequence correctly in 6 guesses or less, and you lose if you fail to do so.
+
+## Features
+
+### Mobile Support (Responsive Design)
+
+The website is adapted to be used on mobile as well as on computer:
+Mobile Version:
+<img src="https://i.imgur.com/CAi48YJ.png" width="200px" />
+
+### Difficulty Selection

@@ -2,13 +2,14 @@ import React from "react";
 import "./App.scss";
 import Rules from "./ui/Rules";
 import Board from "./ui/Board";
-
+import Colours, { Colour } from "./types/Colour";
 // The main App Class, which contains all of the GUI aspect
-class App extends React.Component<{}, { show: boolean }> {
+class App extends React.Component<{}, { show: boolean; colours: Colour[] }> {
 	constructor(props: any) {
 		super(props);
 		this.state = {
-			show: true
+			show: true,
+			colours: Colours
 		};
 	}
 	render() {
@@ -22,9 +23,9 @@ class App extends React.Component<{}, { show: boolean }> {
 			<>
 				<div className="App">
 					<h1 className="title">Mastermind</h1>
-					<Rules show={this.state.show} />
-					{/* Display the board */}
-					<Board />
+					<Rules show={this.state.show} setColours={this.setColours} />
+					{/* Display the board, passing through the colours to be used based on the difficulty chosen by the user */}
+					<Board colours={this.state.colours} />
 					<button
 						className="rules"
 						onClick={() => {
@@ -37,6 +38,13 @@ class App extends React.Component<{}, { show: boolean }> {
 			</>
 		);
 	}
+	// Allows for the difficulty to be selected
+	setColours = (numberOfColours: number) => {
+		this.setState({
+			colours: Colours.slice(0, numberOfColours),
+			show: false
+		});
+	};
 	showRules = () => {
 		this.setState({
 			show: true

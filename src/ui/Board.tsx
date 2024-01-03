@@ -7,33 +7,50 @@ const NumberOfRows = 6;
 
 class Board extends React.Component<
 	//typings
-	{},
-	{ sequence: Colour[]; rows: boolean[]; won: boolean; currentRow: number }
+	{ colours: Colour[] },
+	{
+		sequence: Colour[];
+		rows: boolean[];
+		won: boolean;
+		currentRow: number;
+		colours: Colour[];
+	}
 > {
 	constructor(props: any) {
 		super(props);
 		// Global, modifiable properties
 		this.state = {
-			sequence: this.generateSequence(),
+			sequence: this.generateSequence(this.props.colours),
 			// This states whether or not the row is active
 			rows: Array(NumberOfRows).fill(false),
 			won: false,
 			// Incramented on each submission of a row
-			currentRow: 0
+			currentRow: 0,
+			colours: this.props.colours
 		};
 		// Marks the first row as active
 		this.state.rows[0] = true;
 	}
-
+	componentWillReceiveProps(
+		nextProps: Readonly<{ colours: Colour[] }>,
+		nextContext: any
+	): void {
+		// gets the colours when the user selects a difficulty, and then updates the sequence to use these colours
+		this.setState({ colours: nextProps.colours });
+		this.setState({ sequence: this.generateSequence(nextProps.colours) });
+	}
 	// Generates the random sequence of colours.
-	generateSequence(): Colour[] {
+	generateSequence(colours: Colour[]): Colour[] {
 		let sequence: Colour[] = [];
 		for (let i = 0; i < 4; i++) {
-			sequence.push(Colours[Math.floor(Math.random() * Colours.length)]);
+			sequence.push(colours[Math.floor(Math.random() * Colours.length)]);
 		}
 		return sequence;
 	}
-
+	// method to be passed through to allow for the rows to use the correct colours
+	getColours = () => {
+		return this.state.colours;
+	};
 	render() {
 		return (
 			<>
@@ -79,12 +96,14 @@ class Board extends React.Component<
 						<>
 							{/* Initialises 6 rows, giving each one its unique identifier, the sequence
 							to comapre to, whether or not it is active, and passes through the submitRow 
-							method so the row is able to be submitted and move on to the next */}
+							method so the row is able to be submitted and move on to the next, and the 
+							method to get the right colours to use. */}
 							<Row
 								active={this.state.rows[i]}
 								sequence={this.state.sequence}
 								id={i}
 								submitRow={this.submitRow}
+								getColours={this.getColours}
 							/>
 						</>
 					);

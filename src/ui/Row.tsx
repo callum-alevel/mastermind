@@ -6,7 +6,13 @@ import Colours, { Colour } from "../types/Colour";
 
 class Row extends React.Component<
 	//typings
-	{ active: boolean; sequence: Colour[]; id: number; submitRow: Function },
+	{
+		active: boolean;
+		sequence: Colour[];
+		id: number;
+		submitRow: Function;
+		getColours: Function;
+	},
 	{
 		active: boolean;
 		colours: (Colour | undefined)[];
@@ -55,8 +61,10 @@ class Row extends React.Component<
 									type="colour"
 									active={this.state.active}
 									id={v}
-									// Passing through the function to set the colour to the Circle class
+									// Passing through the method to set the colour to the Circle class
 									setColour={this.setColour}
+									// Passing through this method so that the right colours will be used according to user selected difficulty
+									getColours={this.props.getColours}
 								/>
 							);
 						})}
@@ -83,7 +91,7 @@ class Row extends React.Component<
 										type="guess"
 										active={this.state.active}
 										id={v}
-										// Passing through the function to check the colour to the Circle class (for the guess confirmation.)
+										// Passing through the method to check the colour to the Circle class (for the guess confirmation.)
 										checkColour={this.checkColour}
 									/>
 								);

@@ -1,12 +1,12 @@
-// The 6 colours to be used in the game.
+// The 8 colours to be used in the game.
 const Colours: Colour[] = [
 	["blue", "#6495ED"],
-	["red", "#DE3163"],
+	["red", "#F72C48"],
 	["green", "#2ECC71"],
 	["aqua", "#00FFFF"],
-	["orange", "#F59A16"],
+	["orange", "#F4863F"],
 	["yellow", "#EFF43F"],
-	["purple", "#9622F1"],
+	["purple", "#982CF7"],
 	["pink", "#F516E7"]
 ];
 
