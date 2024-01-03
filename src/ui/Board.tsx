@@ -1,7 +1,7 @@
 // The class for the entire board of mastermind
 
 import React from "react";
-import Colours, { Colour } from "../types/Colour";
+import { Colour } from "../types/Colour";
 import Row from "./Row";
 const NumberOfRows = 6;
 
@@ -43,7 +43,7 @@ class Board extends React.Component<
 	generateSequence(colours: Colour[]): Colour[] {
 		let sequence: Colour[] = [];
 		for (let i = 0; i < 4; i++) {
-			sequence.push(colours[Math.floor(Math.random() * Colours.length)]);
+			sequence.push(colours[Math.floor(Math.random() * colours.length)]);
 		}
 		return sequence;
 	}

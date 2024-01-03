@@ -112,6 +112,7 @@ class Row extends React.Component<
 		// gets the counts in the sequence for each colour
 		for (let colour of this.props.sequence) {
 			//@ts-ignore
+			console.log(colour);
 			count[colour[0]].total++;
 		}
 		// gets the guesses that are correct in both colour and position
