@@ -36,7 +36,16 @@ class Rules extends React.Component<
 					<h4>Guess the 4 colour sequence in 6 tries</h4>
 					<p>
 						{" "}
-						- Each guess must contain 4 colours of the 6/8 available
+						- Each guess must contain 4 colours
+						{!this.state.selected ? (
+							<>
+								<br />- At the bottom of this page, you have the option to select
+								whether you'd like to have 6 or 8 colours to choose from per guess (6 is
+								easier, 8 is harder)
+							</>
+						) : (
+							""
+						)}
 						<br />- To begin, select your chosen colours on the first row and press
 						submit
 						<br />- Repeat until you guess correctly or have guessed 6 times

@@ -38,8 +38,20 @@ To win, you must guess the sequence correctly in 6 guesses or less, and you lose
 
 ### Mobile Support (Responsive Design)
 
-The website is adapted to be used on mobile as well as on computer:
+The website is adapted to be used on mobile as well as on a desktop:
+
 Mobile Version:
+
 <img src="https://i.imgur.com/CAi48YJ.png" width="200px" />
+<img src="https://i.imgur.com/oZk2zIu.png" width="200px" />
+
+Desktop Version:
+
+<img src="https://i.imgur.com/RHpmh6N.png" width="1000px" />
+<img src="https://i.imgur.com/RHpmh6N.png" width="1000px" />
 
 ### Difficulty Selection
+
+Users have the option to choose whether or not their sequence made up of 6 or 8 colours, making it easier/harder to guess respectively
+
+<img src="https://i.imgur.com/aUgx4ZO.png" width="400px" />
