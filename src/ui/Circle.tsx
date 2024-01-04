@@ -1,6 +1,7 @@
 //The class for the individual circles in each row of mastermind
 
 import React from "react";
+import Colours, { Colour } from "../types/Colour";
 
 class Circle extends React.Component<
 	//typings
@@ -10,16 +11,17 @@ class Circle extends React.Component<
 		id: number;
 		setColour?: Function;
 		checkColour?: Function;
-		getColours?: Function;
+		colours?: Colour[];
 	},
-	{ showMenu: boolean; colour?: string; active: boolean }
+	{ showMenu: boolean; colour?: string; active: boolean; colours: Colour[] }
 > {
 	constructor(props: any) {
 		super(props);
 		// Global, modifiable properties
 		this.state = {
 			active: this.props.active,
-			showMenu: false
+			showMenu: true,
+			colours: this.props.colours ?? Colours
 		};
 	}
 	/* Upon the values passed through via the parent class changing, 
@@ -31,10 +33,14 @@ class Circle extends React.Component<
 			id: number;
 			setColour?: Function | undefined;
 			checkColour?: Function | undefined;
+			colours?: Colour[];
 		}>,
 		nextContext: any
 	): void {
-		this.setState({ active: nextProps.active });
+		this.setState({
+			active: nextProps.active,
+			colours: nextProps.colours ?? Colours
+		});
 	}
 	render() {
 		// This checks if the colour is correct
@@ -78,12 +84,12 @@ class Circle extends React.Component<
 							: {}
 					}
 				/>
-				{this.state.showMenu ? (
+				{this.state.showMenu && this.props.type === "colour" ? (
 					<div className="grid dropdown">
 						{
 							// Creates the dropdown menu of the options for colours, using the colours that are selected based on the difficulty chosen
 							//@ts-ignore
-							this.props.getColours().map(([colour, hex]) => {
+							this.state.colours.map(([colour, hex]) => {
 								return this.state.active ? (
 									<div
 										className="circle guess picker"

@@ -11,7 +11,7 @@ class Row extends React.Component<
 		sequence: Colour[];
 		id: number;
 		submitRow: Function;
-		getColours: Function;
+		colours: Colour[];
 	},
 	{
 		active: boolean;
@@ -22,6 +22,7 @@ class Row extends React.Component<
 		>;
 		checked: boolean[][];
 		rowIsFinished: boolean;
+		Colours: Colour[];
 	}
 > {
 	constructor(props: any) {
@@ -42,11 +43,12 @@ class Row extends React.Component<
 			colours: Array(4).fill(undefined),
 			count: count,
 			checked: [],
-			rowIsFinished: false
+			rowIsFinished: false,
+			Colours: this.props.colours ?? Colours
 		};
 	}
 	componentWillReceiveProps(nextProps: any, nextContext: any): void {
-		this.setState({ active: nextProps.active });
+		this.setState({ active: nextProps.active, Colours: nextProps.colours });
 	}
 	render() {
 		return (
@@ -64,7 +66,7 @@ class Row extends React.Component<
 									// Passing through the method to set the colour to the Circle class
 									setColour={this.setColour}
 									// Passing through this method so that the right colours will be used according to user selected difficulty
-									getColours={this.props.getColours}
+									colours={this.state.Colours}
 								/>
 							);
 						})}

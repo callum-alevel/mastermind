@@ -48,9 +48,9 @@ class Board extends React.Component<
 		return sequence;
 	}
 	// method to be passed through to allow for the rows to use the correct colours
-	getColours = () => {
+	getColours() {
 		return this.state.colours;
-	};
+	}
 	render() {
 		return (
 			<>
@@ -103,7 +103,7 @@ class Board extends React.Component<
 								sequence={this.state.sequence}
 								id={i}
 								submitRow={this.submitRow}
-								getColours={this.getColours}
+								colours={this.state.colours}
 							/>
 						</>
 					);

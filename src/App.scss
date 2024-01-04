@@ -80,8 +80,9 @@ body {
 	.circle.guess.picker {
 		margin-top: 2px;
 		margin-bottom: 0;
-		height: 15px;
-		width: 15px;
+		height: 17.5px;
+		width: 17.5px;
+		margin-left: 4px;
 	}
 	// Optimisations for mobile devices
 	@media screen and (max-width: 1000px) {
