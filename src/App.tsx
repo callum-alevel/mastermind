@@ -44,7 +44,6 @@ class App extends React.Component<{}, { show: boolean; colours: Colour[] }> {
 			colours: Colours.slice(0, numberOfColours),
 			show: false
 		});
-		console.log(this.state.colours);
 	};
 	showRules = () => {
 		this.setState({
