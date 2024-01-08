@@ -119,7 +119,7 @@ class Row extends React.Component<
 		// the count variable so that the same colour in the sequence is only accounted for once.
 		let count = this.state.count;
 		// gets the counts in the sequence for each colour
-		for (let colour of this.props.sequence) {
+		for (let colour of this.state.sequence) {
 			//@ts-ignore
 			count[colour[0]].total++;
 		}
@@ -127,7 +127,7 @@ class Row extends React.Component<
 		for (let i in this.state.colours) {
 			//@ts-ignore
 			let guess: Colour = this.state.colours[i];
-			if (guess[0] === this.props.sequence[i][0]) {
+			if (guess[0] === this.state.sequence[i][0]) {
 				count[guess[0]].correctPlace++;
 				guesses[i] = [true];
 			} else {
@@ -140,7 +140,7 @@ class Row extends React.Component<
 			let guess: Colour = this.state.colours[i];
 			let cColour = count[guess[0]];
 			let total = cColour.correctPlace + cColour.inArray;
-			for (let j of this.props.sequence) {
+			for (let j of this.state.sequence) {
 				if (j[0] === guess[0]) {
 					if (total < cColour.total) {
 						guesses[i].push(true);
