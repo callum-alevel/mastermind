@@ -23,6 +23,7 @@ class Row extends React.Component<
 		checked: boolean[][];
 		rowIsFinished: boolean;
 		Colours: Colour[];
+		sequence: Colour[];
 	}
 > {
 	constructor(props: any) {
@@ -44,11 +45,17 @@ class Row extends React.Component<
 			count: count,
 			checked: [],
 			rowIsFinished: false,
-			Colours: this.props.colours ?? Colours
+			Colours: this.props.colours ?? Colours,
+			sequence: this.props.sequence
 		};
 	}
 	componentWillReceiveProps(nextProps: any, nextContext: any): void {
-		this.setState({ active: nextProps.active, Colours: nextProps.colours });
+		// Update the sequence, colours and activity of the row when new values are possed
+		this.setState({
+			active: nextProps.active,
+			Colours: nextProps.colours,
+			sequence: nextProps.sequence
+		});
 	}
 	render() {
 		return (
