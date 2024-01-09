@@ -123,6 +123,7 @@ class Row extends React.Component<
 			//@ts-ignore
 			count[colour[0]].total++;
 		}
+		console.log(count);
 		// gets the guesses that are correct in both colour and position
 		for (let i in this.state.colours) {
 			//@ts-ignore
@@ -136,16 +137,23 @@ class Row extends React.Component<
 		}
 		// gets the guesses that are correct in only colour not position.
 		for (let i in this.state.colours) {
+			if (guesses[i][0] === true) {
+				guesses[i].push(true);
+				continue;
+			}
 			//@ts-ignore
 			let guess: Colour = this.state.colours[i];
 			let cColour = count[guess[0]];
+			console.log(cColour);
 			let total = cColour.correctPlace + cColour.inArray;
 			for (let j of this.state.sequence) {
 				if (j[0] === guess[0]) {
 					if (total < cColour.total) {
+						console.log(j[0]);
 						guesses[i].push(true);
 						count[guess[0]].inArray++;
 						total++;
+						console.log(total);
 					}
 				}
 			}
