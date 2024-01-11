@@ -14,13 +14,13 @@ Table of Contents
 
 ## The Game
 
-The way it works is similar to the way the game [Wordle (_New York Times_)](https://www.nytimes.com/games/wordle/index.html) works. The player has to guess a randomly-generated 4-colour sequence across 6 guesses. There are 8 colours that can be included in the sequence and colours can be repeated in a sequence.
+The way it works is similar to the way the game [Wordle (_New York Times_)](https://www.nytimes.com/games/wordle/index.html) works. The player has to guess a randomly-generated 4-colour sequence across 6 guesses. There are 6/8/10 colours that can be included in the sequence and colours can be repeated in a sequence.
 
 ## Playing the Game
 
 **Guess the 4 colour sequence in 6 tries**
 
-- Each guess much contain 4 colours of the 8 available
+- Each guess much contain 4 colours of the 6/8/10 available
 - To begin, select your chosen colours on the first row and press submit, and repeat this until you guess correctly, or have guessed 6 times.
 - The colours of the circles next to your guess will change to show how close you were to the correct sequence
 
