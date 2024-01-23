@@ -20,7 +20,7 @@ class Board extends React.Component<
 		super(props);
 		// Global, modifiable properties
 		this.state = {
-			sequence: this.generateSequence(this.props.colours),
+			sequence: [],
 			// This states whether or not the row is active
 			rows: Array(NumberOfRows).fill(false),
 			won: false,

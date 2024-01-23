@@ -13,12 +13,6 @@ class App extends React.Component<{}, { show: boolean; colours: Colour[] }> {
 		};
 	}
 	render() {
-		if (!localStorage.getItem("currentGame")) {
-			localStorage.setItem(
-				"currentGame",
-				JSON.stringify({ sequence: [], rows: [] })
-			);
-		}
 		return (
 			<>
 				<div className="App">
