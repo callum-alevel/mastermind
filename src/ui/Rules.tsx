@@ -46,8 +46,8 @@ class Rules extends React.Component<
 						) : (
 							""
 						)}
-						<br />- To begin, select your chosen colours on the first row and press
-						submit
+						<br />- To begin, select your guess by pressing on the colour menus on the
+						first row and press submit
 						<br />- Repeat until you guess correctly or have guessed 6 times
 						<br />- The colours of the circles next to your guess will change to show
 						how close you were to the correct sequence
